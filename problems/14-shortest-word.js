@@ -16,9 +16,24 @@ console.log(shortestWord('do what you enjoy'));         // 'do'
 
 let shortestWord = function(sentence) {
   // Your code here
+  let words = sentence.split(' ');
+
+  let minWord = words.reduce((min, word) => {
+    if (min === "" || word.length < min.length) {
+        return word;
+    } else if (word.length === min.length) {
+
+        return words.indexOf(word) > words.indexOf(min) ? word : min;
+    } else {
+        return min;
+    }
+}, "");
+
+  return minWord;
 };
 
 // Your code here
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
@@ -26,4 +41,4 @@ try {
   module.exports = shortestWord;
 } catch (e) {
   module.exports = null;
-}
+}

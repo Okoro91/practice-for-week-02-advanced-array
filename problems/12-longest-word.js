@@ -28,7 +28,7 @@ let longestWord = function(sentence) {
         }
     }, "");
 
-    console.log(maxWord);
+
     return maxWord;
 };
 
